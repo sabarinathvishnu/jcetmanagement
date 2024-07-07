@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align:center;">
+    <h1>Edit your details...</h1>
+    <form method="post" action="{% url 'update_book' bookid=data.id %}">
+        {% csrf_token %}
+        <input type="text" placeholder="bookname" name="bname" value="{{data.bookname}}"><br><br>
+        <input type="text" placeholder="authorname" name="aname" value="{{data.authorname}}"><br><br>
+        <input type="text" placeholder="price" name="price" value="{{data.price}}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+
+</div>
+</body>
+</html>
